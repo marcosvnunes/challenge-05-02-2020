@@ -1,8 +1,4 @@
-import User from '../models/User';
-
-export default async function UserInformationCheck(field, userId, data) {
-  const user = await User.findByPk(userId);
-
+export default async function UserInformationCheck(field, user, data) {
   const response = {};
   if (user[field] === null) {
     response.data = { data, updateAt: new Date() };

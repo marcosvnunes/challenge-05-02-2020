@@ -16,11 +16,7 @@ class BirthdayController {
 
     const user = await User.findByPk(req.userId);
 
-    const resultBirthday = await UserInformationCheck(
-      'birthday',
-      req.userId,
-      data
-    );
+    const resultBirthday = await UserInformationCheck('birthday', user, data);
 
     await user.update({ birthday: resultBirthday.data });
     return res.json({

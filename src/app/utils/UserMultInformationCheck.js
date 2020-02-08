@@ -1,9 +1,6 @@
-import User from '../models/User';
 import compareValuesTwoObjets from './compareValuesTwoObjects';
 
-export default async function UserInformationCheck(field, userId, data) {
-  const user = await User.findByPk(userId);
-
+export default async function UserMultInformationCheck(field, user, data) {
   const response = {};
   if (user[field] === null) {
     response.data = { data, updateAt: new Date() };

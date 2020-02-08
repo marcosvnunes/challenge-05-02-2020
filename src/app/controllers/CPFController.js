@@ -21,12 +21,9 @@ class CPFController {
         id: { [Op.ne]: [req.userId] },
       },
     });
-    console.log(cpfExists);
     if (cpfExists) {
       return res.status(400).json({ error: 'cpf already exists' });
     }
-
-    console.log(clearCPF);
 
     function TestCPF(strCPF) {
       let Sum;

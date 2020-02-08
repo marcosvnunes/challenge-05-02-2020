@@ -36,11 +36,7 @@ class AddressController {
     }
 
     const user = await User.findByPk(req.userId);
-    const resultAddress = await UserMultInformationCheck(
-      'address',
-      req.userId,
-      data
-    );
+    const resultAddress = await UserMultInformationCheck('address', user, data);
 
     await user.update({ address: resultAddress.data });
     return res.json({

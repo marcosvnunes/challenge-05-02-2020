@@ -18,7 +18,7 @@ class AmountRequestedController {
 
     const resultAmount = await UserInformationCheck(
       'amountRequested',
-      req.userId,
+      user,
       data
     );
 
